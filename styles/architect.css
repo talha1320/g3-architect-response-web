@@ -21,6 +21,9 @@
 .dark-3{
   color: #727272
 }
+.orange{
+  color: #FF900E
+}
 
 .bg-color{
   background-color: rgba(255, 144, 14, 0.1);
@@ -34,11 +37,23 @@
   font-size: 1rem;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 2rem;
   margin-top: 1.5rem;
   transition: #EA580C 0.3s ease;
+  font-weight: bold;
 }
 
+main{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 17px 116px;
+}
+main > section {
+  margin-top: 130px;
+}
+.section-title{
+  font-size: 2.8rem;;
+  font-weight: 700;
+}
 /* header styles */
 
 /* nav-bar styles */
@@ -65,18 +80,18 @@
   text-decoration: none;
   font-size: medium;
   font-size: 18px;
-  gap: 2rem;
+  
 
  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
-  justify-content: center;   /* keeps links centered */
+  justify-content: center;   
   align-items: center;
-  gap: 32px;                 /* space between links */
-  flex-wrap: nowrap;         /* force all in one line */
-  list-style: none;          /* remove bullets */
+  gap: 32px;                 
+  flex-wrap: nowrap;         
+  list-style: none;          
   margin: 0;
   padding: 0;
 
@@ -90,10 +105,10 @@
 /* .banner styles */
 
 .container {
-  max-width: 1200px;  /* keeps content same width */
+  max-width: 1440px;   /* max width of content */
   margin: 0 auto;     /* centers it */
   padding: 0 20px;  
-  }  /* small side padding */
+}  
 .banner {
   text-align: center;
   padding: 80px 0;
@@ -117,15 +132,91 @@
   margin-top: 3rem;
 }
 .banner img {
-  max-width: 100%;
+  max-width: 85%;
   display: block;
   margin: 40px auto 0;
   border-radius: 10px;
 }
 
+/* Team and feature sections styles will go here */
+
+.teams{
+  align-items: center;
+}
+.team-image-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.our-features{
+  margin-left: 110px;
+  max-width: 530px;
+}
+
+#Quick-list{
+  font-weight: 400;
+}
+
+
+/* some fact related styles */
+
+.facts-container{
+  display: flex;
+  gap: 24px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.fact{
+  border: 1px solid #FF900E;
+  width: 240px;
+  height: 240px;
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.fact-number{
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 5px; 
+}
+.fact-name{
+  font-size: 1.5rem;
+    margin-top: 5px;
+  margin-bottom: 5px; 
+  font-weight: 500;
+}
+.fact-description{
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0 10px;
+  line-height: 1.4;
+  width: 80%;
+}
+
+/* sponsors related styles */
+.sponsors-info{
+  
+  margin: 50 auto;
+  text-align: center;
+}
+.sponsors-companies{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 30px;
+}
+.sponsors-companies img{
+  filter: grayscale(100%);
+}
+
+
 /* Mobile screens (max-width: 576px) */
 @media screen and (max-width: 576px) {
-  .nav-bar {
+  .nav-bar , .teams{
     flex-direction: column;
     gap: 20px;
     padding: 20px;
@@ -139,11 +230,11 @@
     padding: 6px 8px;
   }
 
-   .nav-links::-webkit-scrollbar {
+  .nav-links::-webkit-scrollbar {
     display: none;           /* hide scrollbar (Chrome, Safari) */
   }
 
-   .nav-links {
+  .nav-links {
     gap: 2rem;               /* tighter spacing */
     overflow-x: auto;        /* allow side scrolling if needed */
     scrollbar-width: none;   /* hide scrollbar (Firefox) */
@@ -151,11 +242,58 @@
 
   .banner {
     padding: 40px 20px;
+     flex-direction: column;
+    text-align: center;
   }
 
   .banner-title {
     font-size: 2rem;
     
   }
+ .banner > div:first-child {
+    flex: unset;
+  }
+  .banner .img {
+    flex: unset;
+  }
 
+
+  .team-image-container, .facts-container, {
+    grid-template-columns: repeat(1, 1fr);  
+  }
+  .facts-container {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 16px;
+  }
+  .our-features {
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+  main {
+    padding: 16px 20px;   /* smaller side padding */
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .features-description {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+.sponsors-companies {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+    #figma {
+    grid-column: 1 / -1; /* makes it span full width */
+    justify-self: center; /* centers the image in its grid cell */
+  }
+  
+  
 }
